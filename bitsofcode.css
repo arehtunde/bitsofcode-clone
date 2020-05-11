@@ -1,0 +1,433 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #F2F2F2;
+    border: 5px solid #FFDF00;
+    font-family: 'Roboto', sans-serif;
+}
+/*layout setup*/
+.container {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: /*mobile design*/
+    "nav"
+    "content"
+    "newsletter"
+    "older"
+    "about"
+    "ads"
+    "social"
+    "footer";
+}
+/*grid-area property*/
+.navbar {
+    grid-area: nav;
+}
+.content {
+    grid-area: content;
+}
+.newsletter {
+    grid-area: newsletter;
+}
+.older {
+    grid-area: older;
+}
+.about {
+    grid-area: about;
+}
+.ads {
+    grid-area: ads;
+}
+.social {
+    grid-area: social;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/*general styling*/
+.navbar {
+    border-bottom: 1px solid #A6ABAB;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 15px 10px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+.content {
+    padding: 10px;
+}
+
+article {
+    padding: 20px 0px;
+}
+
+h2 .title {
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.anime {
+    cursor: pointer;
+}
+
+/* title animation*/
+.anime:hover {
+    animation: anime 1s infinite alternate;    
+}
+
+@keyframes anime {
+    0% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.info {
+    font-style: italic;
+    margin-top: 0;
+}
+
+.info a {
+    color: #000;
+}
+
+article p {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+article:nth-child(-n+4) { /*target 1st four child and leave the rest*/
+    border-bottom: 1px solid #A6ABAB;
+}
+
+span {
+    font-style: normal;
+    font-weight: 900;
+}
+
+.newsletter {
+    border: 1px solid #A6ABAB;
+    background-color: #fff;
+    margin: 0px 10px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.newsletter article {
+    padding: 0px 20px 20px 20px;
+}
+
+.newsletter h3 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.newsletter p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin: 0px 0px 20px 0px;
+}
+
+.newsletter img {
+    max-width: 25%;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+input {
+    padding: 1rem;
+    margin-right: 10px;
+    background-color: #d8d9db;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+    max-width: 75%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/*input::placeholder {
+    font-size: 1.5rem;
+    font-weight: 300;
+}*/
+
+input:placeholder-shown:focus { 
+    border: 1px solid #FFDF00;
+    outline: none;
+}
+
+button {
+    display: block;
+    padding: 10px 5px;
+    font-weight: 700;
+    background-color: #FFDF00;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.older {
+    margin: 0px 10px;
+}
+
+.older ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 300;
+    justify-content: space-between;
+}
+
+.older ul a {
+    color: #000;
+}
+
+.about {
+    border: 1px solid #A6ABAB;
+    margin: 0px 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0px 10px 10px 10px;
+    border-radius: 3px;
+}
+
+.about p a {
+    color: #000;
+}
+
+.about p:last-child {
+    font-size: 1rem;
+}
+
+.about p:last-child a {
+    text-decoration: none;
+    background-color: rgba(135, 207, 235, 0.822);
+    padding: 3px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.flow {
+    font-weight: 300;
+    border: 1px solid #A6ABAB;
+    background-color: #fff;
+    margin: 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+.ads {
+    margin: 0px 10px;
+    padding: 10px 10px 0px 10px;
+    text-align: center;
+    border: 1px solid #A6ABAB;
+    position: relative;
+    border-radius: 3px;
+    /*height and width set to give a dimension to position the images*/
+    min-height: 210px;
+    min-width: 270px;
+}
+
+.ads p {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+/*Ads animation*/
+.ads .img { /*set common class to absolute positioning*/
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    opacity: 0; /*opacity to give transparent effect. This will make the img displaying visible while making others transparent. All img will set out transparent*/
+}
+
+.ads .img { /*animation properties/functions*/
+    animation-name: flow;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-direction: normal;
+}
+
+/*secs for each image to wait before displaying*/
+.ads .img2 {
+    animation-delay: 10s; /*secs before displaying*/
+}
+
+.ads .img3 {
+    animation-delay: 20s; /*secs before displaying*/
+}
+
+/*i have 3 images and want all to render once during a keyframe. so i did "100/3 =33%" to arrive at the point*/
+@keyframes flow { 
+    0% {
+        opacity: 1; /*@ 0% first image will render*/
+    } 
+    33% {
+        opacity: 0; /*@ 33% it wil be transparent. Then the 2nd img which was delay will render and then the 3rd img*/
+    }
+}
+
+.adscover {
+    color: #000;
+    text-decoration: none;
+}
+
+.ads .carbon {
+    font-style: italic;
+}
+
+.social {
+    font-size: 2rem;
+    margin: 0px 10px;
+    text-align: center;
+}
+
+.social .fx {
+    margin-right: 10px;
+}
+
+.footer {
+    border-top: 2px solid #A6ABAB;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.footer p:first-child { 
+    font-style: italic;
+}
+
+.footer .fwd {
+    color: #000;
+    text-decoration: underline;
+}
+
+.footer p a {
+    color: #000;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 500px) {
+    .container {
+        display: grid;
+        gap: 20px 3px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "nav nav"
+        "content content"
+        "newsletter newsletter"
+        "older older"
+        "about ads"
+        "social social"
+        "footer footer";
+    }
+
+    .ads {
+        min-height: 210px;
+        min-width: 220px;
+    }
+
+    .about {
+        min-width: 220px;
+    }
+
+    .newsletter p{
+        max-width: 75%;
+    }
+}
+
+/*switch to line based positioning as template area isnt giving me desired result*/
+@media screen and (min-width: 880px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px 0px;
+    }
+
+    .navbar {
+        grid-column: 1 / -1;
+    }
+
+    .content {
+        grid-column: 2 / span 7;
+        grid-row: 2 / 5;
+    }
+
+    .newsletter {
+        grid-column: 2 / span 7;
+        grid-row: 5;
+    }
+
+    .older {
+        grid-column: 2 / span 7;
+        grid-row: 6;
+    }
+
+    .about {
+        grid-column: 9 / span 3;
+        grid-row: 2;
+    }
+
+    .ads {
+        grid-column: 9 / span 3;
+        grid-row: 2;
+    }
+
+    .social {
+        grid-column: 9 / span 3;
+        grid-row: 3;
+    }
+
+    .footer {
+        grid-column: 1 / -1;
+    }
+
+    .about {
+        max-height: 250px;
+        margin-top: 40px;
+    }
+
+    .ads {
+        min-height: 250px;
+        margin-top: 310px;
+    }
+}
