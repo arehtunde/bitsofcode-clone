@@ -1,2 +1,4 @@
 # bitsofcode-clone
-# following @Ire aderinokun frontend web developer guide. This is part of the task given in the guide
+Following @Ire aderinokun frontend web developer guide. 
+I built this website as part of the task given in the guide to clone a website in HTML & CSS
+LIve site: https://arehtunde.github.io/bitsofcode-clone/
